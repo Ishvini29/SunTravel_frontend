@@ -1,0 +1,44 @@
+<app-menubar></app-menubar>
+<div class="container mt-4">
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <button type="button" class="addbutton"routerLink="/addcontract">Add Contract</button>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search Contracts" aria-label="Search Hotels" aria-describedby="button-addon">
+                <button class="btn btn-secondary" type="button" id="button-addon">Search Contracts</button>
+            </div>
+        </div>
+    </div>
+
+   <!-- Display alert if contract is empty -->
+   <div *ngIf="contracts.length === 0" class="alert alert-dark" role="alert">
+    <b>No contracts are currently available.  Click "Add Contract" to create new contracts</b>
+ </div>
+
+ <!-- Display table if contract is not empty -->
+ <table *ngIf="contracts.length > 0" class="table table-striped">
+        <thead>
+            <tr >
+                <th scope="col">Contract ID</th>
+                <th scope="col">Hotel Name</th>
+                <th scope="col">Location</th>
+                <th scope="col">StartDate</th>
+                <th scope="col">EndDate</th>
+                <th scope="col">Markup Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contract of contracts">
+                <th scope="row">{{ contract.contractId }}</th>
+                <td>{{ contract.hotel.hotelName }}</td>
+                <td>{{ contract.hotel.location }}</td>
+                <td>{{ contract.startDate | date:'shortDate' }}</td>
+                <td>{{ contract.endDate | date:'shortDate' }}</td>
+                <td>{{ contract.markupRate }}%</td>
+            </tr>   
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,43 @@
+<app-menubar></app-menubar>
+<div class="container mt-4">
+    <div class="row mb-3">
+         <!-- add hotel button -->
+        <div class="col-md-6">
+            <button type="button" class="addbutton" routerLink="/addhotel">Add Hotel</button>
+        </div>
+        <!-- location filter dropdown menu-->
+        <div class="col-md-6">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <select class="form-control custom-dropdown" id="hotellocation" [(ngModel)]="selectedLocation" (change)=" filterHotels()">
+                        <option value="" selected>Select Location</option>
+                        <option *ngFor="let location of uniqueLocations">{{location}}</option>
+                      </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       <!-- Display alert if filteredHotels is empty -->
+    <div *ngIf="filteredHotels.length === 0" class="alert alert-dark" role="alert">
+       <b>No hotels are currently available.  Click "Add Hotel" to create new hotels</b>
+    </div>
+
+    <!-- Display table if filteredHotels is not empty -->
+    <table *ngIf="filteredHotels.length > 0" class="table table-striped">
+        <thead>
+            <tr >
+                <th scope="col">Hotel ID</th>
+                <th scope="col">Hotel Name</th>
+                <th scope="col">Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let hotel of filteredHotels">
+                <th scope="row">{{hotel.hotelId}}</th>
+                <td>{{hotel.hotelName}}</td>
+                <td>{{hotel.location}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

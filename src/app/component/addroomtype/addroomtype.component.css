@@ -1,0 +1,38 @@
+.card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .card-header {
+    font-size: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  .btn-primary {
+    background-color: #607D8B;
+    border: none;
+    width: 100%;
+  }
+  
+  .btn-primary:hover {
+    background-color: #8d7176;
+  }
+  
+  .bgimage{
+    float: right;
+    opacity: 0.9;
+    height: 336px;
+    width: 440px;
+    margin-right: 0px;
+ }
+ .backimg{
+  width: 40px;
+  margin-left: 264px;
+}

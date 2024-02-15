@@ -1,0 +1,23 @@
+<app-menubar></app-menubar>
+<div class="container mt-4"> 
+
+  <div class="alert alert-dark" >
+    <h3>Available Hotels</h3>
+   </div>
+  
+  <!-- Display alert if contracts array is empty -->
+  <div *ngIf="contracts.length === 0" class="alert alert-dark" role="alert">
+   <b>No hotel found for your searching criteria.</b> 
+  </div>
+
+ <!--Display hotel information for your search criteria -->
+     <div *ngFor="let contract of contracts" class="card mb-3">
+    <div class="card-header bg-secondary text-white">
+      <h5>{{ contract.hotel.hotelName }}</h5>
+    </div>
+    <div class="card-body">
+      <p><strong>Location:</strong>{{ contract.hotel.location }}</p>
+    <p><strong>Total price:</strong>{{ calculatedPriceForContract(contract)}}</p>
+    </div>
+  </div>
+</div> 

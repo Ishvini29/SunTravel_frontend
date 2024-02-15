@@ -1,0 +1,27 @@
+
+.title-bar {
+    background: linear-gradient(to right, #607D8B, #34515E); 
+    color: #ffffff;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    
+  }
+  
+  .img1 {
+    width: 130px; 
+    height: auto; 
+    margin-right: 25px; 
+  }
+
+  

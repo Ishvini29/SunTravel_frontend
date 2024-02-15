@@ -1,0 +1,47 @@
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background: linear-gradient(to right, #728f9d, #34515E); 
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    margin-top: 50px;
+  }
+  .login-form h2 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .form-control:focus {
+    box-shadow: none;
+  }
+  .login-btn {
+    background: linear-gradient(to right, #766972, #3a2e36); 
+    color: #fff;
+    border: 1px solid transparent;
+  }
+  .login-btn:hover {
+    background: linear-gradient(to right, #3a2e36, #766972)
+  }
+  .create-account {
+    text-align: center;
+  }
+
+  body {
+    background-color: #d9e2ea; /* Set background color for the whole page */
+  }
+  
+  .background-container {
+    min-height: 100vh; /* Ensure container covers the full height of the viewport */
+  }
+
+  .form-control:focus {
+    border-color: #96868f; /* Desired border color when input is focused */
+    border-width: 3px;
+  }
+
+  .imageback{
+    max-width: 50%;
+    margin-top: 180px;
+
+  }

@@ -1,0 +1,52 @@
+<app-menubar></app-menubar>
+<div class="container mt-5">
+  <div class="card mb-4">
+    <div class="card-header bg-secondary text-white">
+      <h3>Search Hotels</h3>
+     </div>
+     
+    <div class="card-body">
+      <div class="form-group row">
+        <label for="checkInDate" class="col-sm-2 col-form-label">Check-in Date:</label>
+        <div class="col-sm-8">
+          <input type="date" id="checkInDate" class="form-control" [(ngModel)]="checkInDate">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="noOfNights" class="col-sm-2 col-form-label">Number of Nights:</label>
+        <div class="col-sm-8">
+          <input type="number" id="noOfNights" class="form-control" [(ngModel)]="noOfNights">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngFor="let condition of conditions; let i = index" class="condition border p-3 mb-3">
+    <h3 class="mb-3">Criteria {{ i + 1 }}</h3>
+    <div class="form-group row">
+      <label for="roomTypeName" class="col-sm-2 col-form-label">Room Type Name:</label>
+      <div class="col-sm-8">
+        <input type="text" id="roomTypeName" class="form-control" [(ngModel)]="condition.roomType">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="noOfAdults" class="col-sm-2 col-form-label">No. of Adults:</label>
+      <div class="col-sm-8">
+        <input type="number" id="noOfAdults" class="form-control" [(ngModel)]="condition.noOfAdults">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="noOfRooms" class="col-sm-2 col-form-label">No. of Rooms:</label>
+      <div class="col-sm-8">
+        <input type="number" id="noOfRooms" class="form-control" [(ngModel)]="condition.noOfRooms">
+      </div>
+    </div>
+  </div>
+  <button class="addbutton mt-2" (click)="addCondition()">Add Search Criteria</button>
+  <button class="btn btn-secondary ml-2 mt-2" (click)="conditions.length > 0 ? searchContract() :  AlertaddConditions()">Search</button>
+</div>
+<br>
+
+
+

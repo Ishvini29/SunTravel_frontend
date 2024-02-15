@@ -1,0 +1,36 @@
+<app-menubar></app-menubar>
+<div class="container mt-4">
+  <img src="assets/back.png"class="backimg" routerLink="/roomtype">
+ <div class="card">
+   <div class="card-header bg-secondary text-white">
+     <h3>Add Roomtype</h3>
+   </div>
+
+   <div class="card-body">
+    <form [formGroup]="postRoomtypeForm" (ngSubmit)="postRoomtype()">
+        <div class="form-group">
+          <img src="../../../assets/nav12.jpg"[width]="460"[height]="230" style="border-radius: 10px;"><br>
+          <label for="hotelName">Hotel Name</label>
+          <select class="form-control" id="hotelName" formControlName="hotelId">
+            <option *ngFor="let hotel of hotels" [value]="hotel.hotelId">({{ hotel.hotelId }}) {{ hotel.hotelName }} - {{ hotel.location }}</option>
+           </select>
+        </div>
+
+        <div class="form-group">
+            <label for="roomtype">Roomtype</label>
+            <input type="text" class="form-control" id="roomtype" placeholder="Enter roomtype"formControlName="roomType">
+          </div>
+          <div *ngIf="postRoomtypeForm.get('roomType')?.hasError('required') && (postRoomtypeForm.get('roomType')?.touched || postRoomtypeForm.get('roomType')?.dirty)">
+            <small class="text-danger">Please enter the Roomtype.</small>
+          </div>
+          <div *ngIf="postRoomtypeForm.get('roomType')?.hasError('capitalAlphabetsOnly') && (postRoomtypeForm.get('roomType')?.touched || postRoomtypeForm.get('roomType')?.dirty)">
+            <small class="text-danger">Roomtype must start with a capital letter, followed by lowercase letters.</small>
+          </div>
+        <button type="submit" class="btn btn-primary">Save Roomtype</button>
+      </form>
+   </div>
+ </div>
+ <br>
+</div>
+
+

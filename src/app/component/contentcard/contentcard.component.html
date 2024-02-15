@@ -1,0 +1,42 @@
+<app-menubar></app-menubar>
+<div class="container">
+  <div class="row">
+    
+    <!-- hotel card -->
+    <div class="col-md-4 mb-3 ">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hotels</h5>
+        </div>
+        <img src="assets/nav6.jpg" alt="Card Image 1"(click)="openAddHotelForm()" >
+      </div>
+    </div>
+
+    <!-- room card -->
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-header">
+          <h5>Rooms</h5>
+        </div>
+        <img src="assets/nav5.jpg" alt="Card Image 3"(click)="openAddRoomTypeForm()">
+      </div>
+    </div>
+
+    <!-- contract card -->
+    <div class="col-md-4 mb-3">
+      <div class="card">
+        <div class="card-header">
+          <h5>Contracts</h5>
+        </div>
+        <img src="assets/nav7.jpg" alt="Card Image 2"(click)="openAddContractForm()">
+      </div>
+    </div>
+
+    <!-- search based button -->
+   <div>
+    <button type="button" class="btn btn-outline-secondary btn-lg btn-block"routerLink="/searchroomtype">Search Based On Customer Request</button>
+   </div> 
+  </div>
+  <br>
+</div>
+
